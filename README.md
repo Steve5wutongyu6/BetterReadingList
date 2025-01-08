@@ -25,6 +25,10 @@
 2. 点击添加当前标签页，将当前标签页添加到阅读列表
 3. 在阅读列表中管理您的阅读列表
 
+## 截图
+![image](https://github.com/user-attachments/assets/9b9b1e2b-5628-41ba-aaec-1e385c458b58)
+
+
 ## 贡献
 
 欢迎提交Issue和Pull Request，欢迎Star
