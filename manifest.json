@@ -1,0 +1,34 @@
+{
+  "name": "BetterReadinglist",
+  "version": "1.0",
+  "manifest_version": 3,
+  "description": "更好的阅读列表",
+  "permissions": [
+    "readingList",
+    "sidePanel",
+    "storage",
+    "contextMenus",
+    "tabs"
+  ],
+  "side_panel": {
+    "default_path": "sidebar.html"
+  },
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "action": {
+    "default_title": "阅读清单",
+    "default_icon": {
+      "16": "icon.png",
+      "32": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "icons": {
+    "16": "icon.png",
+    "32": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  }
+}
