@@ -2,11 +2,10 @@
   "name": "BetterReadinglist",
   "version": "1.0",
   "manifest_version": 3,
-  "description": "更好的阅读列表",
+  "description": "一个更强大的的Chrome阅读列表",
   "permissions": [
     "readingList",
     "sidePanel",
-    "storage",
     "contextMenus",
     "tabs"
   ],
