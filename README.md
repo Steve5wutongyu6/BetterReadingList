@@ -15,7 +15,7 @@
 
 ## 安装
 
-1. ~~从Chrome网上应用店安装~~ （还不行，我没VISA卡，注册不了Chrome开发者）
+1. 从Chrome网上应用店安装
 2. 从Microsoft Edge网上应用店安装 
 3. 从GitHub下载源码安装
 
