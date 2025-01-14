@@ -15,9 +15,8 @@
 
 ## 安装
 
-1. 从Chrome网上应用店安装
-2. 从Microsoft Edge网上应用店安装 
-3. 从GitHub下载源码安装
+1. 从[Chrome网上应用店](https://chromewebstore.google.com/detail/betterreadinglist/kedhndcpaalgkmbogheldhddbneamdph)安装
+2. 从GitHub下载源码安装
 
 ## 使用说明
 
