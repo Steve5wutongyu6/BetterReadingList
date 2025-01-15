@@ -265,3 +265,58 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo) => {
         updateAddButtonState(); // 当URL改变时更新按钮状态
     }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // 选择按钮
+    const alreadyReadButton = document.getElementById('alreadyread');
+    const haveNotReadButton = document.getElementById('havenotread');
+
+    // 选择阅读列表
+    const readingList = document.getElementById('reading-list');
+
+    // 创建 Web Worker
+    const worker = new Worker(chrome.runtime.getURL('batchWorker.js'));
+
+    // 监听 Web Worker 消息
+    worker.onmessage = function(event) {
+        const { batch, readStatus, done } = event.data;
+
+        if (batch) {
+            // 更新 DOM
+            batch.forEach(url => {
+                const item = readingList.querySelector(`a[href="${url}"]`).parentElement;
+                if (readStatus) {
+                    item.classList.add('read');
+                } else {
+                    item.classList.remove('read');
+                }
+                toggleReadStatus(url, !readStatus);
+            });
+        }
+
+        if (done) {
+            requestAnimationFrame(updateAllStates); // 使用 requestAnimationFrame
+        }
+    };
+
+    // 批量更新阅读状态
+    function batchUpdateReadStatus(items, readStatus) {
+        const urls = Array.from(items).map(item => item.querySelector('a').href);//获取所有url
+        const batchSize = 100; // 每批处理的项目数量
+
+        // 发送任务到 Web Worker
+        worker.postMessage({ urls, readStatus, batchSize });
+    }
+
+    // “全部已读”按钮功能
+    alreadyReadButton.addEventListener('click', function() {
+        const unreadItems = readingList.querySelectorAll('.reading-item:not(.read)');
+        batchUpdateReadStatus(unreadItems, true);
+    });
+
+    // “全部未读”按钮功能
+    haveNotReadButton.addEventListener('click', function() {
+        const readItems = readingList.querySelectorAll('.reading-item.read');
+        batchUpdateReadStatus(readItems, false);
+    });
+});

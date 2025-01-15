@@ -80,6 +80,8 @@
     .tabs-section {
       background: white;
       padding: 0 10px;
+      display: flex;
+      flex-direction: column;
     }
 
     .tabs {
@@ -103,10 +105,38 @@
       color: #4CAF50;
     }
 
-    .stats {
+    .stats-readmanage {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       padding: 8px 0;
+    }
+
+    .stats {
       font-size: 13px;
       color: #666;
+    }
+
+    .readmanagebutton {
+      display: flex;
+      gap: 10px;
+    }
+
+    .readmanagebutton .action-btn {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 13px;
+      color: white;
+    }
+
+    #alreadyread {
+      background-color: #dc3545; /* 红色 */
+    }
+
+    #havenotread {
+      background-color: #28a745; /* 绿色 */
     }
 
     /* 内容区域 */
@@ -116,7 +146,7 @@
       overflow-y: auto;
       /* 只允许内容区域滚动 */
       padding: 10px;
-      padding-top: 0;
+      padding-top: 15px;
       /* 移除顶部内边距 */
     }
 
@@ -240,7 +270,13 @@
         <div class="tab" data-tab="unread">未读</div>
         <div class="tab" data-tab="read">已读</div>
       </div>
-      <div class="stats"></div>
+      <div class="stats-readmanage">
+        <div class="stats"></div>
+        <div class="readmanagebutton">
+          <button id="alreadyread" class="action-btn read-all">全部已读</button>
+          <button id="havenotread" class="action-btn unread-all">全部未读</button>
+        </div>
+      </div>
     </div>
   </div>
 

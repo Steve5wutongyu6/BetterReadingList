@@ -1,6 +1,6 @@
 {
   "name": "BetterReadinglist",
-  "version": "1.0",
+  "version": "1.1",
   "manifest_version": 3,
   "description": "一个更强大的的Chrome阅读列表",
   "permissions": [
@@ -29,5 +29,11 @@
     "32": "icon.png",
     "48": "icon.png",
     "128": "icon.png"
-  }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["batchWorker.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }
