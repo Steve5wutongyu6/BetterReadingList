@@ -6,6 +6,12 @@ chrome.runtime.onInstalled.addListener(() => {
         contexts: ["all"]
     });
 
+    // 监听插件栏插件按钮的点击事件
+    chrome.action.onClicked.addListener((tab) => {
+        // 弹出侧边栏
+        chrome.sidePanel.open({ windowId: tab.windowId });
+    });
+
     // 监听上下文菜单的点击事件
     chrome.contextMenus.onClicked.addListener((info, tab) => {
 
