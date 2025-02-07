@@ -1,19 +1,20 @@
 {
   "name": "BetterReadinglist",
-  "version": "1.1",
+  "version": "1.2",
   "manifest_version": 3,
   "description": "一个更强大的的Chrome阅读列表",
   "permissions": [
     "readingList",
     "sidePanel",
     "contextMenus",
-    "tabs"
+    "tabs",
+    "activeTab"
   ],
   "side_panel": {
     "default_path": "sidebar.html"
   },
   "background": {
-    "service_worker": "service-worker.js"
+    "service_worker": "background.js"
   },
   "action": {
     "default_title": "阅读清单",
