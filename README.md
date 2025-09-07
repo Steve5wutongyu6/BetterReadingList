@@ -18,6 +18,17 @@
 1. 从[Chrome网上应用店](https://chromewebstore.google.com/detail/betterreadinglist/kedhndcpaalgkmbogheldhddbneamdph)安装
 2. 从GitHub下载源码安装
 
+## 开发
+
+该扩展基于 **Vue 3 + Vite** 构建。
+
+```bash
+npm install
+npm run build
+```
+
+构建完成后，将 `dist` 目录作为未打包扩展加载到 Chrome 中即可。
+
 ## 使用说明
 
 1. 点击Chrome工具栏中的扩展图标即可打开
@@ -26,7 +37,6 @@
 
 ## 截图
 ![Screenshot 2025-01-09 001948 (1)](https://github.com/user-attachments/assets/385103df-711a-4cf4-bc34-884e16853513)
-
 
 ## 贡献
 
